@@ -15,7 +15,7 @@ import android.support.v4.app.FragmentPagerAdapter;
  * ---- Disregard Women, Aquire Currency
  */
 public class BrowserFragmentAdapter extends FragmentPagerAdapter {
-	public static final String[] PAGER_TABS = new String[] { "Vodka", "Bourbon", "Whiskey", "Tequila", "Gin" };
+	public static final CharSequence[] PAGER_TABS = new CharSequence[] { "Vodka", "Bourbon", "Whiskey", "Tequila", "Gin" };
 	
 	
 	/**
@@ -29,7 +29,7 @@ public class BrowserFragmentAdapter extends FragmentPagerAdapter {
 	@Override
 	public Fragment getItem(int position) {
 		// TODO Auto-generated method stub
-		return DrinkListFragment.newInstance(PAGER_TABS[position]);
+		return DrinkListFragment.newInstance(PAGER_TABS[position].toString());
 	}
 
 	@Override

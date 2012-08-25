@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,6 +26,7 @@ public class HomeFragment extends Fragment{
 	 */
 	private LayoutInflater inflater;
 	private LinearLayout scrollContainer;
+	private Button addDrank;
 	
 	/**
 	 * Constructor
@@ -51,6 +54,8 @@ public class HomeFragment extends Fragment{
 		
 		// Load Views From layout
 		scrollContainer = (LinearLayout)getActivity().findViewById(R.id.ll_yourdrinks_content);
+		addDrank = (Button)getActivity().findViewById(R.id.btn_yourdrinks_add);
+		
 		
 		// Load Your Current Drinks
 		createYourDrink("Whiskey", R.drawable.whiskey);
@@ -58,13 +63,22 @@ public class HomeFragment extends Fragment{
 		createYourDrink("Scotch", R.drawable.scotch);
 		createYourDrink("Wine", R.drawable.wine);
 		createYourDrink("Whiskey", R.drawable.whiskey);
-		createYourDrink("Whiskey", R.drawable.whiskey);
-		createYourDrink("Whiskey", R.drawable.whiskey);
-		createYourDrink("Whiskey", R.drawable.whiskey);
-		createYourDrink("Whiskey", R.drawable.whiskey);
-		createYourDrink("Whiskey", R.drawable.whiskey);
-		createYourDrink("Whiskey", R.drawable.whiskey);
-		createYourDrink("Whiskey", R.drawable.whiskey);
+		
+		addDrank.setOnClickListener(new OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				// Launch Bottle add/edit fragment
+				getFragmentManager().beginTransaction()
+					.replace(R.id.fragment_container, new BottleAddEditFragment())
+					.addToBackStack("HOME")
+					.commit();
+				
+			}
+		});
+		
+		
 		
 	}
 	

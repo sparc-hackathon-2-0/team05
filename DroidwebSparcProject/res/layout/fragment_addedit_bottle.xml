@@ -6,8 +6,89 @@
     <EditText android:id="@+id/et_addedit_title"
         	  android:layout_width="wrap_content"
         	  android:layout_height="wrap_content"
-        	  android:text="Title"
-        	  android:inputType="text"
+        	  android:text="Grey 'Motherfucking' Goose"
+        	  android:ems="16"
+        	  android:layout_margin="25dp"
+        />
+    
+    <ImageView 
+        android:id="@+id/iv_addedit_bottle"
+        android:layout_width="150dp"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/et_addedit_title"
+        android:src="@drawable/whiskey_stencil"
+        />
+    
+    <com.droidweb.droidwebsparcproject.customviews.VerticalSeekBar
+        android:id="@+id/vs_addedit_drinkslider"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/et_addedit_title"
+        android:layout_toRightOf="@+id/iv_addedit_bottle"
+        android:max="100"
+        android:progress="0"
+        
+        />
+
+    <Spinner
+        android:id="@+id/sp_addedit_categories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/vs_addedit_drinkslider"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/vs_addedit_drinkslider" 
+        />
+    
+    <TextView 
+        android:id="@+id/tv_addedit_totalvollabel" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Total Volume"
+        android:textStyle="bold"
+        android:layout_below="@+id/sp_addedit_categories"
+        android:layout_toRightOf="@+id/vs_addedit_drinkslider"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="12dp"
+        />
+    
+    <TextView 
+        android:id="@+id/tv_addedit_totalvolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="1200 mL"
+        android:layout_below="@+id/tv_addedit_totalvollabel"
+        android:layout_alignLeft="@+id/tv_addedit_totalvollabel"
+        android:layout_alignRight="@+id/tv_addedit_totalvollabel"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="3dp"
+        />
+    
+    <TextView 
+        android:id="@+id/tv_addedit_estivollabel" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Approx. Volume"
+        android:textStyle="bold"
+        android:layout_below="@+id/tv_addedit_totalvolume"
+        android:layout_toRightOf="@+id/vs_addedit_drinkslider"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="12dp"
+        />
+    
+    <TextView 
+        android:id="@+id/tv_addedit_estimatedvolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="800 mL"
+        android:layout_below="@+id/tv_addedit_estivollabel"
+        android:layout_alignLeft="@+id/tv_addedit_totalvolume"
+        android:layout_alignRight="@+id/tv_addedit_totalvolume"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="3dp"
         />
 
 </RelativeLayout>
