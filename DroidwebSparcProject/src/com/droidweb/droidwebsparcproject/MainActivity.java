@@ -1,11 +1,9 @@
 package com.droidweb.droidwebsparcproject;
 
-import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.NavUtils;
+import android.view.Menu;
 
 import com.droidweb.droidwebsparcproject.R;
 import com.droidweb.droidwebsparcproject.fragments.HomeFragment;
@@ -16,7 +14,6 @@ public class MainActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
         
         // Check that the activity is using the layout version with
         // the fragment_container FrameLayout
