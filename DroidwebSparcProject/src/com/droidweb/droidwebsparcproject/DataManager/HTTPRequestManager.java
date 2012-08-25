@@ -12,14 +12,13 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
-import com.droidweb.droidwebsparcproject.Objects.Recipes;
 
 import android.os.AsyncTask;
 import android.util.Log;
 
 public class HTTPRequestManager {
 
-	private static final String RECIPEREQUESTFORINGREDIENTURL = "http://www.drinknation.com/drinks/ingredient/";
+	private static final String RECIPEREQUESTFORINGREDIENTURL = "http://192.168.8.149/Speakeasy/retrieve.php";
 	
 	public HTTPRequestManager() {
 	}
@@ -29,7 +28,8 @@ public class HTTPRequestManager {
 			case GetRecipesForIngredient:
 				// make the url
 			try {
-				URL url = new URL(RECIPEREQUESTFORINGREDIENTURL + argument);
+				URL url = new URL(RECIPEREQUESTFORINGREDIENTURL + "?type=" + "recipes" + "&argument='" + argument + "'");
+				Log.d("Making Request", url.toString());
 				HTTPRequestTask myHttpRequestTask = new HTTPRequestTask(request);
 				myHttpRequestTask.execute(url);
 			} catch (MalformedURLException e) {
@@ -65,7 +65,7 @@ public class HTTPRequestManager {
 				response = httpclient.execute(httpost);
 				HttpEntity entity = response.getEntity();
 				stream = entity.getContent();
-				//Log.d("response", ReadInputStream(stream));
+				Log.d("response", ReadInputStream(stream));
 				
 				
 				// parse this puppy out

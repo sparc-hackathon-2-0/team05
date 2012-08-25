@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         
         // test my stuff
-        Ingredient _ingredient = new Ingredient("rum");
+        Ingredient _ingredient = new Ingredient("Jamesons");
         _ingredient.getMyRecipes();
     }
 
