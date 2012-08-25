@@ -4,7 +4,7 @@ Speakeasy app
 
 Suggestion drink of the day
 Add to liqour cabinet
-
+View shooping list
 
 (day 2) what others are drinking
 Tweet my drink
