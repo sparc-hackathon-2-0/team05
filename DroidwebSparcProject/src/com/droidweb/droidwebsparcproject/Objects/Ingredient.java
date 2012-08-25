@@ -11,8 +11,8 @@ public class Ingredient {
 	}
 	
 	// get recipes for drink
-	public ArrayList<Recipes> getMyRecipes(){
-		// make query for recipes from drink
-		
-	}
+//	public ArrayList<Recipes> getMyRecipes(){
+//		// make query for recipes from drink
+//		
+//	}
 }
