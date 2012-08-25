@@ -12,6 +12,7 @@ public class Ingredient {
 	
 	// get recipes for drink
 	public ArrayList<Recipes> getMyRecipes(){
+		return null;
 		// make query for recipes from drink
 		
 	}

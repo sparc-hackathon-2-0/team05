@@ -1,10 +1,10 @@
 package com.droidweb.droidwebsparcproject;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
+
+import com.droidweb.droidwebsparcproject.Objects.Ingredient;
 
 public class MainActivity extends Activity {
 
@@ -12,6 +12,10 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        // test my stuff
+        Ingredient _ingredient = new Ingredient("rum");
+        _ingredient.getMyRecipes();
     }
 
     @Override
