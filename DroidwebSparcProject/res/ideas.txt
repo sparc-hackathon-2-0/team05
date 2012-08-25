@@ -1,0 +1,10 @@
+Speakeasy app
+
+-- Home screen 
+
+Suggestion drink of the day
+Add to liqour cabinet
+
+
+(day 2) what others are drinking
+Tweet my drink
