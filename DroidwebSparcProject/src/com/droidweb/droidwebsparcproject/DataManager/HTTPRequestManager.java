@@ -3,6 +3,7 @@ package com.droidweb.droidwebsparcproject.DataManager;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import org.apache.http.HttpEntity;
@@ -29,7 +30,8 @@ public class HTTPRequestManager {
 				// make the url
 			try {
 				URL url = new URL(RECIPEREQUESTFORINGREDIENTURL + argument);
-				new HTTPRequestManager.HTTPRequestTask().execute(url);
+				HTTPRequestTask myHttpRequestTask = new HTTPRequestTask(request);
+				myHttpRequestTask.execute(url);
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -38,30 +40,46 @@ public class HTTPRequestManager {
 	}
 
 	private class HTTPRequestTask extends AsyncTask<URL, Integer, Long> {
+		RequestType request;
+		
+		public HTTPRequestTask(RequestType request){
+			super();
+			this.request = request;
+		}
+		
 		protected Long doInBackground(URL... urls) {
 
 			HttpClient httpclient = new DefaultHttpClient();
-			HttpPost httpost;
+			HttpPost httpost = null;
 			HttpResponse response;
+			InputStream stream;
 
-			for (int i = 0; i < urls.length; i++) {
-
-				httpost = new HttpPost(/* URL HERE */);
-
-				try {
-					response = httpclient.execute(httpost);
-					HttpEntity entity = response.getEntity();
-					InputStream stream = entity.getContent();
-					Log.d("response", ReadInputStream(stream));
-				} catch (ClientProtocolException e) {
-					// Handle not connecting to client
-					Log.d("ClientProtocolException Thrown", e.toString());
-				} catch (IOException e) {
-					// couldn't connect to host
-					// TODO: HANDLE NOT CONNECTING TO CLIENT
-					Log.d("IOException Thrown", e.toString());
-				}
+			try {
+				httpost = new HttpPost(urls[0].toURI());
+			} catch (URISyntaxException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			}
+
+			try {
+				response = httpclient.execute(httpost);
+				HttpEntity entity = response.getEntity();
+				stream = entity.getContent();
+				//Log.d("response", ReadInputStream(stream));
+				
+				
+				// parse this puppy out
+				HTTPResponseParser.parseResponse(ReadInputStream(stream), request);
+			} catch (ClientProtocolException e) {
+				// Handle not connecting to client
+				Log.d("ClientProtocolException Thrown", e.toString());
+			} catch (IOException e) {
+				// couldn't connect to host
+				// TODO: HANDLE NOT CONNECTING TO CLIENT
+				Log.d("IOException Thrown", e.toString());
+			}
+			
+			
 			return null;
 		}
 
@@ -69,7 +87,7 @@ public class HTTPRequestManager {
 			// drive the percentage
 		}
 
-		protected void onPostExecute(Long result) {
+		protected void onPostExecute(String result) {
 			// we're done, parse the result
 			// parseResponse();
 		}
