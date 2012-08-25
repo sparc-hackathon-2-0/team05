@@ -14,7 +14,6 @@ public class Ingredient {
 	}
 	
 	// get recipes for drink
-<<<<<<< HEAD
 	public ArrayList<Recipes> getMyRecipes(){
 		HTTPRequestManager requestManager = new HTTPRequestManager();
 		requestManager.makeRequest(RequestType.GetRecipesForIngredient, this.getIngredientName());
@@ -36,10 +35,8 @@ public class Ingredient {
 	public void setIngredientName(String ingredientName) {
 		this.ingredientName = ingredientName;
 	}
-=======
 //	public ArrayList<Recipes> getMyRecipes(){
 //		// make query for recipes from drink
 //		
 //	}
->>>>>>> branch 'master' of https://github.com/sparc-hackathon-2-0/team05.git
 }

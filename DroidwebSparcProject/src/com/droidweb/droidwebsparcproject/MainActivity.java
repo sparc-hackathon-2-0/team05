@@ -1,18 +1,9 @@
 package com.droidweb.droidwebsparcproject;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-<<<<<<< HEAD
-
-import com.droidweb.droidwebsparcproject.Objects.Ingredient;
-=======
-import android.view.MenuItem;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.NavUtils;
->>>>>>> branch 'master' of https://github.com/sparc-hackathon-2-0/team05.git
+import android.view.Menu;
 
-import com.droidweb.droidwebsparcproject.R;
 import com.droidweb.droidwebsparcproject.fragments.HomeFragment;
 
 public class MainActivity extends FragmentActivity {
