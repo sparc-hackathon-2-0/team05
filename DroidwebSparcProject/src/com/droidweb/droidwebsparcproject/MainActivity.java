@@ -29,7 +29,7 @@ public class MainActivity extends FragmentActivity {
         	if (savedInstanceState != null) {
         		return;
         	}
-
+        	
         	// Create an instance of Home Fragment.
         	HomeFragment home = new HomeFragment();
 
