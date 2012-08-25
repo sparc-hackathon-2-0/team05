@@ -2,4 +2,10 @@
 
     <style name="AppTheme" parent="android:Theme.Light" />
 
+     <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_empty</item>
+        <item name="android:minHeight">28dip</item>
+        <item name="android:maxHeight">48dip</item>
+    </style>
+    
 </resources>

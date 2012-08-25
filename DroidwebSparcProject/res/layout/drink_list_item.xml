@@ -8,7 +8,8 @@
         android:id="@+id/iv_drink_icon"
         android:layout_width="64dp"
         android:layout_height="32dp"
-        android:src="@drawable/glass1" />
+        android:src="@drawable/glass1"
+        />
     
     <TextView 
         android:id="@+id/tv_drink_title"
@@ -39,9 +40,15 @@
             
             android:text="100 cal"
             />
-
-           
-        
+
+        <RatingBar
+            android:id="@+id/rb_drink_rating"
+            style="@style/foodRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:stepSize="3.5" />
         
     </LinearLayout>
 
