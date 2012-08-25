@@ -1,7 +1,5 @@
 package com.droidweb.droidwebsparcproject.Objects;
 
-import java.util.ArrayList;
-
 import com.droidweb.droidwebsparcproject.R;
 
 
