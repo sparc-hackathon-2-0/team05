@@ -5,4 +5,8 @@
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
 
+    <string name="your_drinks_title">Your Drinks</string>
+    <string name="dotd_title">Drink of the Day</string>
+    
+    
 </resources>
