@@ -1,13 +1,10 @@
 package com.droidweb.droidwebsparcproject;
 
-import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.NavUtils;
 
-import com.droidweb.droidwebsparcproject.R;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.view.Menu;
+
 import com.droidweb.droidwebsparcproject.fragments.HomeFragment;
 
 public class MainActivity extends FragmentActivity {
