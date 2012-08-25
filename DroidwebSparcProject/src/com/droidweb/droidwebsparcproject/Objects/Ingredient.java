@@ -35,4 +35,8 @@ public class Ingredient {
 	public void setIngredientName(String ingredientName) {
 		this.ingredientName = ingredientName;
 	}
+//	public ArrayList<Recipes> getMyRecipes(){
+//		// make query for recipes from drink
+//		
+//	}
 }
